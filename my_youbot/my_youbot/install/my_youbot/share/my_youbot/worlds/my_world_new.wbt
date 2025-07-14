@@ -1,0 +1,129 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/kuka/youbot/protos/Youbot.proto"
+
+WorldInfo {
+  info [
+    "Simulation of the KUKA youBot robot."
+    "This model includes an accurate and fast simulation of the Meccanum wheels."
+    "The robot can be equiped with various sensors (including the Microsoft Kinect) and configured with zero, one or two arms."
+  ]
+  title "KUKA youBot"
+  basicTimeStep 16
+  contactProperties [
+    ContactProperties {
+      material1 "InteriorWheelMat"
+      coulombFriction [
+        0, 2, 0
+      ]
+      frictionRotation -0.785398 0
+      bounce 0
+      forceDependentSlip [
+        10, 0
+      ]
+    }
+    ContactProperties {
+      material1 "ExteriorWheelMat"
+      coulombFriction [
+        0, 2, 0
+      ]
+      frictionRotation 0.785398 0
+      bounce 0
+      forceDependentSlip [
+        10, 0
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.2658376995272873 0.03831170660658213 0.9632562123583376 2.4382878321001686
+  position 3.3741286792788165 -1.7707175074253791 1.9321069911068547
+  follow "my_robot"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  size 100 100
+}
+Solid {
+  translation 1.95331 0.516931 0.025
+  rotation 0 0 1 -0.261795307179586
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.05 0.05 0.05
+      }
+    }
+  ]
+  boundingObject Box {
+    size 0.05 0.05 0.05
+  }
+  physics Physics {
+    density 100
+  }
+  recognitionColors [
+    1 0 0
+    0 0 0
+    0 0 0
+  ]
+}
+Solid {
+  translation 1.34291 -0.292696 0.04
+  rotation 0 0 1 -1.8325953071795862
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 0.15 0.08
+      }
+    }
+  ]
+  name "solid(2)"
+  boundingObject Box {
+    size 0.1 0.15 0.08
+  }
+  physics Physics {
+    density 100
+  }
+  recognitionColors [
+    1 0 0
+    0 0 0
+    0 0 0
+  ]
+}
+Youbot {
+  translation 0.0012587336394923243 1.0053467937509069 0.10193777039495037
+  rotation 0.0007140402215585044 0.0031769455570918865 -0.999994698567692 0.493045882032707
+  name "my_robot"
+  controller "<extern>"
+  bodySlot [
+    DistanceSensor {
+      translation 0.27 0 -0.06
+      rotation 1 0 0 0.785398
+      name "ds0"
+      lookupTable [
+        0 0 0
+        0.7 0.7 0
+      ]
+      numberOfRays 5
+      aperture 0.4
+    }
+    Camera {
+      translation 0.26 0 -0.05
+      width 320
+      height 320
+    }
+  ]
+}

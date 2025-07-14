@@ -1,0 +1,6 @@
+[console_scripts]
+camera_node = my_youbot.camera_node:main
+control_motor = my_youbot.control_motor:main
+my_robot_driver = my_youbot.my_robot_driver:main
+smach = my_youbot.smach:main
+
