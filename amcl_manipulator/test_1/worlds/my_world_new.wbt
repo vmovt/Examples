@@ -1,0 +1,381 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/kuka/youbot/protos/Youbot.proto"
+
+WorldInfo {
+  info [
+    "Simulation of the KUKA youBot robot."
+    "This model includes an accurate and fast simulation of the Meccanum wheels."
+    "The robot can be equiped with various sensors (including the Microsoft Kinect) and configured with zero, one or two arms."
+  ]
+  title "KUKA youBot"
+  basicTimeStep 16
+  contactProperties [
+    ContactProperties {
+      material1 "InteriorWheelMat"
+      coulombFriction [
+        0, 2, 0
+      ]
+      frictionRotation -0.785398 0
+      bounce 0
+      forceDependentSlip [
+        10, 0
+      ]
+    }
+    ContactProperties {
+      material1 "ExteriorWheelMat"
+      coulombFriction [
+        0, 2, 0
+      ]
+      frictionRotation 0.785398 0
+      bounce 0
+      forceDependentSlip [
+        10, 0
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.0970362086828009 -0.48473961715123676 0.8692591545497467 5.300449170535364
+  position -4.482931240647953 7.893727082412181 4.352056754376583
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  size 100 100
+}
+Solid {
+  translation 1.9168 1.66637 0.139998
+  rotation -1.3061858205364242e-11 2.612399352239825e-12 1 4.079870000283236e-06
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.05 0.05 0.05
+      }
+    }
+  ]
+  name "detail1"
+  boundingObject Box {
+    size 0.05 0.05 0.05
+  }
+  physics Physics {
+    density 100
+  }
+  recognitionColors [
+    1 0 0
+    0 0 0
+    0 0 0
+  ]
+}
+Solid {
+  translation 2.19 -0.618 0.21499754750000005
+  rotation 6.530803869599545e-12 -6.269695828867943e-11 1 4.079870000236596e-06
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.05 0.05 0.05
+      }
+    }
+  ]
+  name "detail1(1)"
+  boundingObject Box {
+    size 0.05 0.05 0.05
+  }
+  physics Physics {
+    density 100
+  }
+  recognitionColors [
+    1 0 0
+    0 0 0
+    0 0 0
+  ]
+  linearVelocity -1.4472870037708046e-17 -2.7986594419548667e-18 -6.75015598972095e-16
+  angularVelocity 3.3306690738754657e-16 3.944304526105059e-31 -2.875013388838722e-17
+}
+Solid {
+  translation 2.12164 1.41218 0.041
+  rotation 0 0 1 4.07987e-06
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.07 0.07 0.15
+      }
+    }
+  ]
+  name "markup1"
+  boundingObject Box {
+    size 0.05 0.05 0.05
+  }
+  recognitionColors [
+    1 0 0
+    0 0 0
+    0 0 0
+  ]
+}
+Solid {
+  translation 2.19164 -0.61782 0.041
+  rotation 0 0 1 4.07987e-06
+  children [
+    Shape {
+      appearance PBRAppearance {
+        metalness 0
+      }
+      geometry Box {
+        size 0.07 0.07 0.3
+      }
+    }
+  ]
+  name "markup2"
+  boundingObject Box {
+    size 0.05 0.05 0.05
+  }
+  recognitionColors [
+    1 0 0
+    0 0 0
+    0 0 0
+  ]
+}
+Solid {
+  translation 1.75072 1.78604 0.04
+  rotation 0 0 -1 1.5708
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.3 0.4 0.15
+      }
+    }
+  ]
+  name "trolley1"
+  boundingObject Box {
+    size 0.3 0.4 0.15
+  }
+  recognitionColors [
+    1 0 0
+    0 0 0
+    0 0 0
+  ]
+}
+Solid {
+  translation 1.75072 -1.05396 0.04
+  rotation 0 0 -1 1.5708
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.3 0.4 0.3
+      }
+    }
+  ]
+  name "trolley2"
+  boundingObject Box {
+    size 0.3 0.4 0.3
+  }
+  recognitionColors [
+    1 0 0
+    0 0 0
+    0 0 0
+  ]
+}
+Solid {
+  translation 2.2165 1.38136 0.04
+  rotation 0 0 1 4.02055e-07
+  children [
+    Shape {
+      appearance PBRAppearance {
+        metalness 0
+      }
+      geometry Box {
+        size 0.3 0.4 0.15
+      }
+    }
+  ]
+  name "CNC1"
+  boundingObject Box {
+    size 0.3 0.4 0.15
+  }
+  recognitionColors [
+    0 0 1
+    0 0 0
+    0 0 0
+  ]
+}
+Solid {
+  translation 2.2165 -0.61864 0.04
+  rotation 0 0 1 4.02055e-07
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.3 0.4 0.3
+      }
+    }
+  ]
+  name "CNC2"
+  boundingObject Box {
+    size 0.3 0.4 0.3
+  }
+  recognitionColors [
+    0 0 1
+    0 0 0
+    0 0 0
+  ]
+}
+Solid {
+  translation 1.58318 -2.17292 0.04
+  rotation 0 0 -1 1.5708
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 4 0.4
+      }
+    }
+  ]
+  name "wall1"
+  boundingObject Box {
+    size 0.1 4 0.4
+  }
+  recognitionColors [
+    1 0 0
+    0 0 0
+    0 0 0
+  ]
+}
+Solid {
+  translation 1.58318 3.20708 0.04
+  rotation 0 0 -1 1.5708
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 4 0.4
+      }
+    }
+  ]
+  name "wall2"
+  boundingObject Box {
+    size 0.1 4 0.4
+  }
+  recognitionColors [
+    1 0 0
+    0 0 0
+    0 0 0
+  ]
+}
+Solid {
+  translation 3.65318 0.537078 0.04
+  rotation 0 0 -1 3.67802e-06
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 5.5 0.4
+      }
+    }
+  ]
+  name "wall3"
+  boundingObject Box {
+    size 0.1 5.5 0.4
+  }
+  recognitionColors [
+    1 0 0
+    0 0 0
+    0 0 0
+  ]
+}
+Solid {
+  translation -0.48682 0.51708 0.04
+  rotation 0 0 -1 3.67802e-06
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 5.5 0.4
+      }
+    }
+  ]
+  name "wall4"
+  boundingObject Box {
+    size 0.1 5.5 0.4
+  }
+  recognitionColors [
+    1 0 0
+    0 0 0
+    0 0 0
+  ]
+}
+Youbot {
+  hidden position_0_0 -2.9612995322915664e-14
+  hidden position_0_1 1.1197830823832776e-09
+  hidden position_0_2 -5.906865416289228e-10
+  hidden position_0_3 4.69171651922204e-14
+  hidden position_3_0 -2.1253975782224473e-10
+  hidden position_4_0 1.5700026343810083
+  hidden rotation_5 0 -1 0 1.5700026343810083
+  hidden position_5_0 -2.6350013832213204
+  hidden rotation_6 0 0.9999999999999999 0 2.6350013832213204
+  hidden position_6_0 1.7800004229910327
+  hidden rotation_7 0 -1 0 1.7800004229910327
+  hidden position_7_0 -4.072891921713628e-09
+  hidden position_8_0 1.189691011614057e-11
+  hidden position_8_1 -1.1896902209385043e-11
+  translation 0.119155 1.63 0.103267
+  rotation 0.9986642811323786 0.0253252071292584 0.045036512678156386 0.00159085
+  name "my_robot"
+  controller "<extern>"
+  bodySlot [
+    Camera {
+      translation 0.15 0 1
+      rotation 0 1 0 1.5708
+      width 256
+      height 256
+    }
+    Lidar {
+      translation 0.27 0 0
+      fieldOfView 3.14
+      numberOfLayers 1
+      maxRange 6
+      defaultFrequency 20
+      maxFrequency 45
+    }
+  ]
+}

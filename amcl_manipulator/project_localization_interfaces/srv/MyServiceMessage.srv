@@ -1,0 +1,6 @@
+# Request
+string label
+---
+# Response
+bool navigation_successfull
+string message
