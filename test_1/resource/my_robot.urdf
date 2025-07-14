@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<robot name="my_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- Основная база -->
+  <link name="base_link"/>
+  <link name="lidar_link"/>
+
+  <!-- Колеса -->
+  <link name="wheel_front_left"/>
+  <link name="wheel_front_right"/>
+  <link name="wheel_rear_left"/>
+  <link name="wheel_rear_right"/>
+
+  <!-- Суставы колес -->
+  <joint name="wheel_front_left_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_front_left"/>
+    <origin xyz="0.228 0.158 -0.055" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <joint name="wheel_front_right_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_front_right"/>
+    <origin xyz="0.228 -0.158 -0.055" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <joint name="wheel_rear_left_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_rear_left"/>
+    <origin xyz="-0.228 0.158 -0.055" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <joint name="wheel_rear_right_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_rear_right"/>
+    <origin xyz="-0.228 -0.158 -0.055" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- Связь лидара -->
+  <joint name="lidar_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar_link"/>
+    <origin xyz="0.27 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Webots устройства -->
+  <webots>
+    <device reference="lidar" type="Lidar">
+      <ros>
+        <enabled>true</enabled>
+        <alwaysOn>true</alwaysOn>
+        <frameName>lidar_link</frameName>
+      </ros>
+    </device>
+
+    <device reference="ds0" type="DistanceSensor">
+      <ros>
+        <topicName>/left_sensor</topicName>
+        <alwaysOn>true</alwaysOn>
+      </ros>
+    </device>
+
+    <device reference="ds1" type="DistanceSensor">
+      <ros>
+        <topicName>/right_sensor</topicName>
+        <alwaysOn>true</alwaysOn>
+      </ros>
+    </device>
+
+    <device reference="camera" type="Camera">
+      <ros>
+        <topicName>/camera</topicName>
+        <alwaysOn>true</alwaysOn>
+      </ros>
+    </device>
+
+    <plugin type="test_1.my_robot_driver.MyRobotDriver" />
+  </webots>
+
+</robot>
